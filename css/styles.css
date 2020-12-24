@@ -1,0 +1,368 @@
+/* General */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: linear-gradient(#0083b0, #00b4db);
+  --green: #28a745;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --light: hsl(210, 17%, 96%);
+  --dark: #343a40;
+
+  --Very-Dark-Blue: hsl(230, 17%, 14%);
+  --Very-Dark-top: hsl(232, 19%, 15%);
+  --Dark-Desaturated-Blue-card: hsl(228, 28%, 20%);
+  --Desaturated-Blue-Text: hsl(228, 34%, 66%);
+  --White-Text: hsl(0, 0%, 100%);
+
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-scheme: light dark;
+}
+
+body {
+  font-family: var(--font-family-sans-serif);
+  line-height: 1.58;
+  font-size: 15px;
+  width: 100vw;
+  overflow-x: hidden;
+  word-wrap: normal;
+  display: grid;
+  background: var(--white);
+  transition: all 150ms ease;
+  background: hsl(0, 60%, 100%);
+}
+
+body * {
+  transition: all 150ms ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+i {
+  font-size: 1.5rem;
+  margin-right: 0.4rem;
+}
+
+/**************
+ header 
+ *************/
+
+#header {
+  width: 100%;
+  padding: 0 0 7rem 0;
+  background: var(--light);
+  display: flex;
+  justify-content: center;
+}
+
+.header-content {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* .left {
+
+} */
+.brand {
+  font-size: 2.35rem;
+  font-weight: 600;
+  color: #191b1d;
+  text-transform: capitalize;
+  /* margin-bottom: 0.2rem; */
+}
+
+.total {
+  font-size: 1rem !important;
+}
+
+.right {
+  width: 28%;
+  /* height: 40%; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mode-title {
+  width: 50%;
+}
+
+/**************
+ toggle Mode
+ *************/
+
+#toggle-mode {
+  width: 40%;
+  /* height: 1rem; */
+  /* padding: 1rem; */
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  text-align: center;
+  /* background: var(--light); */
+}
+
+#toggle-mode i {
+  color: yellow;
+  font-size: 3rem;
+  cursor: pointer;
+
+}
+
+/**************
+ Main
+ *************/
+
+main {
+  /* padding: 3rem 0 2rem 0; */
+  width: 88%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+  transform: translateY(-4.8rem);
+}
+
+.current {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.box {
+  height: 13.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+  background: hsl(210, 17%, 92%);
+  cursor: pointer;
+  padding: 0.3rem;
+  position: relative;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 0.18rem;
+  width: 100%;
+  background: var(--yellow);
+  top: 0;
+}
+
+.box a {
+  color: #343a40;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.box a:hover {
+  color: var(--blue);
+}
+
+.followers {
+  font-size: 2.38rem;
+  color: #1e2022;
+  text-transform: capitalize;
+}
+
+.box .title {
+  font-weight: 100;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/**************
+ Overview 
+ *************/
+#overview {
+  width: 100%;
+  margin: 2rem 0 0 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.overview {
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#overview .title {
+  text-align: left;
+  align-self: flex-start;
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.row {
+  height: 9rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+  background: hsl(210, 17%, 92%);
+  cursor: pointer;
+  padding: 0.3rem;
+}
+
+.social-status {
+  width: 78%;
+  height: 28%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social-status .title {
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  color: hsl(208, 7%, 40%);
+}
+
+.social-number h4 {
+  font-size: 1.5rem;
+}
+
+.box,
+.row {
+  box-shadow: 0 2px 25px hsla(0, 0%, 0%, 0.096);
+  border-radius: 0.2rem;
+}
+
+.box:hover,
+.row:hover {
+  background: hsl(210, 18%, 88%);
+}
+
+/**************
+icons
+ *************/
+
+i.ion-social-facebook {
+  color: var(--light);
+  background: hsl(208, 92%, 50%);
+  padding: 0 0.6rem;
+}
+
+i.ion-social-youtube {
+  color: var(--red);
+}
+
+i.ion-social-twitter {
+  color: hsl(203, 89%, 53%);
+}
+
+i.ion-social-instagram-outline {
+  color: #e83e8c;
+}
+
+i.ion-social-skype {
+    color: hsl(208, 92%, 50%);
+}
+
+/* Styles for users who prefer dark mode at the OS level */
+/* @media (prefers-color-scheme: dark) { */
+
+.dark-theme {
+  background: hsl(230, 17%, 14%);
+}
+
+.dark-theme #header {
+  background: hsl(232, 19%, 15%);
+}
+
+.dark-theme .box,
+.dark-theme .row {
+  background: hsl(228, 28%, 20%);
+  color: hsl(0, 0%, 100%) !important;
+  box-shadow: none;
+}
+
+.dark-theme .box:hover,
+.dark-theme .row:hover {
+  background: hsl(228, 28%, 16%);
+  box-shadow: 0 2px 25px hsla(0, 0%, 0%, 0.212);
+}
+
+.dark-theme .followers,
+.dark-theme #overview .title {
+  color: var(--White-Text);
+}
+
+.dark-theme a {
+  color: var(--White-Text);
+}
+
+.dark-theme .brand {
+  color: var(--light);
+}
+
+.dark-theme body {
+  background: hsl(230, 17%, 14%);
+  filter: invert(0) hue-rotate(0deg) blur(0);
+}
+
+.light-theme {
+  filter: none;
+}
+
+/**************
+Media Quries
+ *************/
+
+@media screen and (max-width: 700px) {
+  .brand {
+    font-size: 1.5rem;
+  }
+  .current,
+  .overview {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 664px) {
+  .current,
+  .overview {
+    width: 76%;
+    grid-template-columns: 1fr;
+  }
+
+  .followers {
+    font-size: 2rem;
+  }
+
+  .box a {
+      font-size: 1.14rem;
+  }
+}
+
+/* } */
